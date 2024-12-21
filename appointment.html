@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Matibidi Hospital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Matibidi Hospital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="departments.html">Departments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="doctors.html">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Appointment Section -->
+    <section class="appointment-section py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Book an Appointment</h1>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow">
+                        <div class="card-body p-4">
+                            <form id="appointmentForm" class="needs-validation" novalidate>
+                                <!-- Personal Information -->
+                                <h4 class="mb-4">Personal Information</h4>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                        <div class="invalid-feedback">Please enter your first name.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                        <div class="invalid-feedback">Please enter your last name.</div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                        <div class="invalid-feedback">Please enter your phone number.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Appointment Details -->
+                                <h4 class="mb-4 mt-5">Appointment Details</h4>
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="department" class="form-label">Department</label>
+                                        <select class="form-select" id="department" required>
+                                            <option value="">Select Department</option>
+                                            <option value="emergency">Emergency Department</option>
+                                            <option value="maternity">Maternity Ward</option>
+                                            <option value="pediatric">Pediatric Department</option>
+                                            <option value="general">General Medicine</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a department.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="doctor" class="form-label">Preferred Doctor</label>
+                                        <select class="form-select" id="doctor">
+                                            <option value="">Select Doctor (Optional)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="date" class="form-label">Preferred Date</label>
+                                        <input type="date" class="form-control" id="date" required>
+                                        <div class="invalid-feedback">Please select a date.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="time" class="form-label">Preferred Time</label>
+                                        <select class="form-select" id="time" required>
+                                            <option value="">Select Time</option>
+                                            <option value="09:00">09:00 AM</option>
+                                            <option value="10:00">10:00 AM</option>
+                                            <option value="11:00">11:00 AM</option>
+                                            <option value="12:00">12:00 PM</option>
+                                            <option value="14:00">02:00 PM</option>
+                                            <option value="15:00">03:00 PM</option>
+                                            <option value="16:00">04:00 PM</option>
+                                        </select>
+                                        <div class="invalid-feedback">Please select a time.</div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="reason" class="form-label">Reason for Visit</label>
+                                    <textarea class="form-control" id="reason" rows="3" required></textarea>
+                                    <div class="invalid-feedback">Please provide a reason for your visit.</div>
+                                </div>
+
+                                <!-- Medical History -->
+                                <h4 class="mb-4 mt-5">Medical History</h4>
+                                <div class="mb-3">
+                                    <label class="form-label">Do you have any existing medical conditions?</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="medicalConditions" id="medicalConditionsYes" value="yes">
+                                        <label class="form-check-label" for="medicalConditionsYes">Yes</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="medicalConditions" id="medicalConditionsNo" value="no">
+                                        <label class="form-check-label" for="medicalConditionsNo">No</label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3" id="medicalConditionsDetails" style="display: none;">
+                                    <label for="conditions" class="form-label">Please specify your medical conditions:</label>
+                                    <textarea class="form-control" id="conditions" rows="2"></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="medications" class="form-label">Current Medications (if any)</label>
+                                    <textarea class="form-control" id="medications" rows="2"></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="allergies" class="form-label">Allergies (if any)</label>
+                                    <textarea class="form-control" id="allergies" rows="2"></textarea>
+                                </div>
+
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="terms" required>
+                                    <label class="form-check-label" for="terms">
+                                        I agree to the terms and conditions and consent to the processing of my medical information.
+                                    </label>
+                                    <div class="invalid-feedback">You must agree before submitting.</div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Book Appointment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Phone: (123) 456-7890<br>
+                    Email: info@matibidihospital.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Location</h5>
+                    <p>123 Hospital Street<br>
+                    Matibidi, MP 1234</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
